@@ -64,8 +64,8 @@ export default {
     this.$store
       .dispatch("user/getList")
       .then(res => {
-          this.deal = res.deal;
-          this.income = res.income;
+        this.deal = res.deal;
+        this.income = res.income;
       })
       .catch(() => {});
   }

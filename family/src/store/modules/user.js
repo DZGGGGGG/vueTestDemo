@@ -1,5 +1,5 @@
 import { login, logout, getInfo } from "@/api/user";
-import { getList,getFamilyList,shotOffUser } from "@/api/dashboard";
+import { getList,getFamilyList,shotOffUser,createuser } from "@/api/dashboard";
 import {
   getToken,
   setToken,
@@ -84,6 +84,18 @@ const actions = {
   shotOffUser({ commit, state }, userId) {
     return new Promise((resolve, reject) => {
       shotOffUser(userId)
+        .then(response => {
+          const { data } = response;
+          resolve(data);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  },
+  createuser({ commit, state }, info) {
+    return new Promise((resolve, reject) => {
+      createuser(info)
         .then(response => {
           const { data } = response;
           resolve(data);

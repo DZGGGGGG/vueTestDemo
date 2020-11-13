@@ -21,3 +21,12 @@ export function shotOffUser(data) {
     data
   });
 }
+
+
+export function createuser(data) {
+  return request({
+    url: "/familyAdmin/member/createMember",
+    method: "post",
+    data
+  });
+}
